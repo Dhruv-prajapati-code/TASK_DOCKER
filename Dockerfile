@@ -1,8 +1,8 @@
-FROM node:18-alpine AS build
+FROM node:18-slim AS build
 WORKDIR /app
 COPY package*.json /app
 RUN npm install
-COPY . ./
+COPY . .
 
 FROM node:18-slim
 WORKDIR /app
